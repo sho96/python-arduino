@@ -49,7 +49,7 @@ void loop() {
 }
 
 void sendData(String value){
-  int valueSize = value.length() / sizeof(String);
+  int valueSize = value.length();
   Serial.print(String(valueSize)+"a");
   Serial.print(value);
 }
