@@ -29,7 +29,7 @@ class Controller:
         #set specific pin to some pin mode
         if not mode in self.pinmodes:
             self.ser.close()
-            raise ValueError(f"pin mode named: {mode} is not supported\nuse one of {pinmodes}")
+            raise ValueError(f"pin mode named: {mode} is not supported\nuse one of {self.pinmodes}")
         self.ser.write(f"pinMode {pin} {mode}\n".encode("ascii"))
     def digitalWrite(self, pin, state):
         #turn a pin on or off
