@@ -3,12 +3,14 @@ import time
 
 class Controller:
     pinmodes = ["OUTPUT", "INPUT", "INPUT_PULLUP"]
-    def __init__(self, portid, baud = 500000, waitTime = 5):
+    def __init__(self, port, baud = 500000):
         #connect to arduino
         print("connecting...")
-        self.ser = serial.Serial(portid, baudrate = baud, timeout = 1)
+        self.ser = serial.Serial(port, baudrate = baud, timeout = 1)
         #self.ser.open()
-        time.sleep(waitTime)
+        while not self.ser.isOpen():
+            pass
+        time.sleep(0.1)
         while self.ser.inWaiting():
             self.ser.read()
         print("connection established")
