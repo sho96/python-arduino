@@ -1,13 +1,7 @@
-import arduinoController as controller
-#or you can paste Controller class directly here.
-#make sure to import "serial" and "time" module if you're doing so
+import arduinoController as arduino
 
 #windows
-controller = controller.Controller("COM5")
-
-#linux/mac
-#controller = controller.Controller("/dev/tty/......")
-
+controller = arduino.Controller("COM5") #/dev/tty/... for linux/mac
 
 buttonPin = 4
 ledPin = 3
