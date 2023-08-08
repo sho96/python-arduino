@@ -1,4 +1,6 @@
 import arduinoController as controller
+#or you can paste Controller class directly here.
+#make sure to import "serial" and "time" module if you're doing so
 
 #windows
 controller = controller.Controller("COM5")
