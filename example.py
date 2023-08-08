@@ -1,12 +1,17 @@
 import arduinoController as controller
 
-controller = controller.Controller("COM3")
+#windows
+controller = controller.Controller("COM5")
+
+#linux/mac
+#controller = controller.Controller("/dev/tty/......")
+
 
 buttonPin = 4
 ledPin = 3
 
 controller.pinMode(ledPin, "OUTPUT")
-controller.pinMode(buttonPin, "INPUT")
+controller.pinMode(buttonPin, "INPUT") #INPUT_PULLUP can also be used
 
 while True:
     pinState = controller.digitalRead(buttonPin)
