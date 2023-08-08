@@ -8,11 +8,7 @@ class Controller:
         print("connecting...")
         self.ser = serial.Serial(portid, baudrate = baud, timeout = 1)
         #self.ser.open()
-        while not self.ser.isOpen():
-            pass
-        time.sleep(0.1)
-        while self.ser.inWaiting():  # Or: while ser.inWaiting():
-            self.ser.readline()
+        time.sleep(waitTime)
         print("connection established")
     def __del__(self):
         #close port when deleted
